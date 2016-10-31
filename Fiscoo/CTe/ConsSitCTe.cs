@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Fiscoo.CTe
 {
-    [XmlRoot("consStatServCte", Namespace = "http://www.portalfiscal.inf.br/cte")]
-    public class ConsStatServCte
+    [XmlRoot("consSitCTe", Namespace = "http://www.portalfiscal.inf.br/cte")]
+    public class ConsSitCTe
     {
-        public ConsStatServCte() { }
-        public ConsStatServCte(int ambiente)
+        public ConsSitCTe() { }
+        public ConsSitCTe(int ambiente, string chaveAcesso)
         {
             tpAmb = ambiente;
+            chCTe = chaveAcesso;
         }
 
-        private string _versao = "2.00";
+        private string _versao = "3.00";
         [XmlAttribute]
         public string versao
         {
@@ -30,7 +30,7 @@ namespace Fiscoo.CTe
         [XmlElement]
         public int tpAmb { get; set; }
 
-        private string _xServ = "STATUS";
+        private string _xServ = "CONSULTAR";
         [XmlElement]
         public string xServ
         {
@@ -43,5 +43,8 @@ namespace Fiscoo.CTe
                 throw new NotSupportedException("Setting the xServ property is not supported");
             }
         }
+
+        [XmlElement]
+        public string chCTe { get; set; }
     }
 }
