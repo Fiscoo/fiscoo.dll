@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CTe\ConsStatServCteTests.cs" />
+    <Compile Include="CTe\ConsSitCTeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
